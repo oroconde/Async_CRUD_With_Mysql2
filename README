@@ -1,0 +1,17 @@
+# CRUD ASINCRONO
+CRUD con conexión a base de datos mySQL
+
+### TECNOLOGIA:
+[Nodejs] Entorno de ejecucion de JavaScript de codigo abierto para la capa de servidor 
+[Express] Framework de Node.js 
+[MySQL2] Driver
+
+### INSTRUCCIONES
+- Instalar npm package npm install.
+- Instalar [MySQL2] Driver
+- Instalaar [Dotenv]
+- Iniciar modo desarrollo npm run dev
+- Iniciar modo produccion npm start
+
+### DESARROLLADOR:
+Bryan Aldair Orozco Conde
