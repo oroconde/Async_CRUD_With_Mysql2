@@ -1,19 +1,64 @@
-const { getall } = require("../models/sales");
+const { getall, findone, create, deleted, update } = require("../models/sales");
 
 const gotall = async (req, res, next) => {
-try {
+  try {
     const data = await getall();
-    res.status(200).json({data, success: true})     
-} catch (error) {
-    next(error)
-}
-
-  
+    res.status(200).json({ data, success: true });
+  } catch (error) {
+    next(error);
+  }
 };
-// const gotone = async (req, res) => {};
-// const gotcreate = async (req, res) => {};
-// const gotdelete = async (req, res) => {};
-// const gotupdate = async (req, res) => {};
+const gotone = async (req, res, next) => {
+  try {
+    const data = await findone();
+    res.status(200).json({ data, success: true });
+  } catch (error) {
+    next(error);
+  }
+};
+const gotcreate = async (req, res, next) => {
+  try {
+    const { order_id, date, units, amount, user_id_fk, product_id_fk } =
+      req.body;
+    const data = await create({
+      order_id,
+      date,
+      units,
+      amount,
+      user_id_fk,
+      product_id_fk,
+    });
+    res.status(200).json({ data, success: true });
+  } catch (error) {
+    next(error);
+  }
+};
+const gotdelete = async (req, res, next) => {
+  try {
+    const { id } = req.params;
+    const data = await deleted(id);
+    res.status(200).json({ data, success: true });
+  } catch (error) {
+    next(error);
+  }
+};
+const gotupdate = async (req, resn, next) => {d
+  try {
+    const { id } = req.params;
+    const { order_i, date, units, amount, user_id_fk, product_id_fk } =
+      req.body;
+    const data = await update(id, {
+      order_i,
+      date,
+      units,
+      amount,
+      user_id_fk,
+      product_id_fk,
+    });
+    res.status(200).json({ data, success: true });
+  } catch (error) {
+    next(error);
+  }
+};
 
-module.exports = { gotall };
-// , gotone, gotcreate, gotdelete, gotupdate
+module.exports = { gotall, gotone, gotcreate, gotdelete, gotupdate };
