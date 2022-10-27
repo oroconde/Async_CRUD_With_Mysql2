@@ -1,6 +1,6 @@
 // importación de variables de entorno procesadas
-const { dbhost, dbname, dbpass, dbport, dbuser, server_port } = require("../config");
 const mysql2 = require('mysql2/promise')
+const { server_port, dbhost, dbname, dbpass, dbport, dbuser } = require('../config/credentials')
 
 // creacion de la conexion a la base de datos
 module.exports = {

@@ -1,5 +1,5 @@
-const { config } = require("./config");
+const { server_port } = require("./config/credentials");
 const app = require("./app");
-app.listen(config.port, () => {
-  console.log(`server running on ${config.port}`);
+app.listen(server_port, () => {
+  console.log(`servidor corriendo en el puerto ${server_port}`);
 });
