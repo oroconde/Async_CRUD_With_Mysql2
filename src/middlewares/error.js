@@ -1,8 +1,8 @@
-const errorMiddle = async (error, req, res, next) => {
+const errorMiddleware = async (error, req, res, next) => {
   if (error) {
     res.status(500).send(error);
   }
   next();
 };
 
-module.exports = { errorMiddle }
+module.exports = { errorMiddleware }

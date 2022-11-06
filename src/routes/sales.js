@@ -1,12 +1,17 @@
-const { Router } = require('express');
-const { listall } = require('../models/sales');
-const route = Router();
+const { Router } = require("express");
+const routesales = Router();
+const {
+  gotall,
+  gotcreate,
+  gotone,
+  gotdelete,
+  gotupdate,
+} = require("../controllers/controller");
 
-route.get("users/", listall);
-route.post("add/", );
-route.get("user/:id", );
-route.delete("del/:id", );
-route.update("edit/:id", );
+routesales.get("users/", gotall);
+routesales.post("add/", gotcreate);
+routesales.get("user/:id", gotone);
+routesales.delete("del/:id", gotdelete);
+routesales.put("edit/:id", gotupdate);
 
-
-module.exports = route
+module.exports = { routesales} ;

@@ -4,13 +4,14 @@ const { server_port, dbhost, dbname, dbpass, dbport, dbuser } = require('../conf
 
 // creacion de la conexion a la base de datos
 module.exports = {
-  connectionDB: async () => {
+  mysqlconnection: async () => {
+    console.log("conexion exitosa!!!")
     return await mysql2.createConnection({
       server_port,
       dbhost,
       dbport,
-      dbuser,
       dbname,
+      dbuser,
       dbpass
     });
   },
