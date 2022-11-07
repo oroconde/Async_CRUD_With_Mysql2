@@ -43,7 +43,6 @@ const gotdelete = async (req, res, next) => {
   }
 };
 const gotupdate = async (req, resn, next) => {
-  d;
   try {
     const { id } = req.params;
     const { order_i, date, units, amount, user_id_fk, product_id_fk } =

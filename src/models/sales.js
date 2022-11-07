@@ -1,16 +1,7 @@
-const { mysqlconnection } = require("../database/mysql.config");
+const { execute } = require("./dbexecute");
 
-const execute = async (query) => {
-  try {
-    const connection = await mysqlconnection();
-    const data = await connection.query(query);
-    return data;
-  } catch (error) {
-    throw error;
-  }
-};
 const getall = async () => {
-  const data = await execute(`SELECT * FROM sales_db`);
+  const data = await execute(`SELECT * FROM sales`);
   return data[0];
 };
 // const findone = async (entity) => {
@@ -38,7 +29,7 @@ const getall = async () => {
 //   return data[0];
 // };
 
-module.exports = { execute, getall }
-  // findone, create, deleted, update };
+module.exports = { getall };
+// findone, create, deleted, update };
 
 getall().then(console.log).catch(console.error);
