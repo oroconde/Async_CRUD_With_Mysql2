@@ -1,4 +1,4 @@
-const { getall, findone, create, deleted, update } = require("../models/sales");
+const { getall } = require('../models/admin');
 
 const gotall = async (req, res, next) => {
   try {

@@ -1,7 +1,7 @@
-const { execute } = require("./dbexecute");
+const { execute_mysql } = require('./executedbMysql');
 
 const getall = async () => {
-  const data = await execute(`SELECT * FROM sales`);
+  const data = await execute_mysql(' SELECT * FROM "Inventario de repuestos"."part-stock-Bquilla"');
   return data[0];
 };
 // const findone = async (entity) => {

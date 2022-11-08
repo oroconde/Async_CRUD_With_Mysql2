@@ -1,6 +1,6 @@
-const { mysqlconnection } = require("../database/mysql.config");
+const { mysqlconnection } = require('../database');
 module.exports = {
-  execute: async (query) => {
+  execute_mysql: async (query) => {
     try {
       const connection = await mysqlconnection();
       const data = await connection.query(query);

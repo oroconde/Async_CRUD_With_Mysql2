@@ -1,3 +1,3 @@
-const { routesales } = require("./sales");
+const { route } = require("./admin");
 
-module.exports = routesales
+module.exports = { route };

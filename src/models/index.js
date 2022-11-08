@@ -1,4 +1,6 @@
-const sales = require('./sales');
-const login = require('./login');
-const dbexecute = require('./dbexecute')
-module.exports = { sales, login, dbexecute};
+// const admin = require("./admin");
+// const { executedbMysql } = require("./executedbMysql");
+// const { executedbPG } = require('./');
+// const login = require('./login');
+
+// module.exports = { admin, executedbMysql, executedbPG };
