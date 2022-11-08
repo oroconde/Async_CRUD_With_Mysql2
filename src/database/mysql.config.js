@@ -6,11 +6,11 @@ const { env_mysql } = require("../config");
 module.exports = {
   mysqlconnection: async () => {
     return await mysql2.createConnection({
-      dbhost: env_mysql.dbhost,
-      dbport: env_mysql.dbport,
-      dbname: env_mysql.dbname,
-      dbuser: env_mysql.dbuser,
-      dbpass: env_mysql.dbpass,
+      database: env_mysql.dbname,
+      port: env_mysql.dbport,
+      user: env_mysql.dbuser,
+      password: env_mysql.dbpass,
+      host: env_mysql.dbhost,
     });
   },
 };
